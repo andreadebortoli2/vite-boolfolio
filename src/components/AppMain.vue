@@ -28,12 +28,25 @@ export default {
 </script>
 
 <template>
-    <div>
-        <template v-for="project in projects.data">
-            <h3>title: {{ project.title }}</h3>
-        </template>
-        <!-- <ProjectCard /> placeholder -->
+    <div class="container">
+        <div class="row">
+            <template v-for="project in projects.data">
+                <ProjectCard :project="project" />
+            </template>
+        </div>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.container {
+    margin: 2rem auto;
+    width: 90%;
+
+    .row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+}
+</style>
