@@ -9,19 +9,30 @@ export default {
 
 <template>
     <div class="card">
-        <img :src="project.image" alt="">
+        <templplate v-if="project.image.startsWith('project-images')">
+            <img :src="'http://127.0.0.1:8000/storage/' + project.image" alt="">
+        </templplate>
+        <template v-else>
+            <img :src="project.image" alt="">
+        </template>
         <div class="card-body">
             <h3>
                 {{ project.title }}
             </h3>
             <div class="metadata">
-                <strong>Type:</strong> {{ project.type.name }}
-                <br>
-                <strong>Technology:</strong>
-                <span v-if="project.technologies.length !== 0">{{ project.technologies }}</span>
+                <strong>Type:</strong>
+                <span v-if="project.type !== null"> {{ project.type.name }}</span>
                 <span v-else> None</span>
                 <br>
-                <strong>Author:</strong> {{ project.author }}
+                <strong>Technology:</strong>
+                <template v-if="project.technologies.length !== 0">
+                    <span v-for="technology in project.technologies"> - {{ technology.name }} - </span>
+                </template>
+                <span v-else> None</span>
+                <br>
+                <strong>Author:</strong>
+                <span v-if="project.author !== null"> {{ project.author }}</span>
+                <span v-else> None</span>
             </div>
         </div>
     </div>
