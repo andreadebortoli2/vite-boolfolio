@@ -9,7 +9,9 @@ export default {
         <div class="container">
             <nav class="menu">
                 <div class="left-menu">
-                    LOGO
+                    <div class="logo">
+                        LOGO
+                    </div>
                 </div>
                 <div class="right-menu">
                     <ul>
@@ -37,12 +39,9 @@ header {
     align-items: center;
 
     .left-menu {
-        font-size: 2.5rem;
-        font-weight: bolder;
-        background-color: skyblue;
-        padding: 1rem;
-        border-radius: 2rem 0 2rem 0;
-        color: white;
+        .logo {
+            font-size: 2.5rem;
+        }
     }
 
     .right-menu {
@@ -53,7 +52,7 @@ header {
             list-style-type: none;
 
             a {
-                color: white;
+                color: whitesmoke;
                 font-size: 1.5rem;
                 font-weight: bold;
                 text-decoration: none;

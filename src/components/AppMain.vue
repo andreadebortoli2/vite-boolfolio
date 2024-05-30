@@ -28,13 +28,15 @@ export default {
 </script>
 
 <template>
-    <div class="container">
-        <div class="row">
-            <template v-for="project in projects.data">
-                <ProjectCard :project="project" />
-            </template>
+    <main>
+        <div class="container">
+            <div class="row">
+                <template v-for="project in projects.data">
+                    <ProjectCard :project="project" />
+                </template>
+            </div>
         </div>
-    </div>
+    </main>
 </template>
 
 <style scoped>

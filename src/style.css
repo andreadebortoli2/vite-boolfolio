@@ -8,3 +8,13 @@
     width: 90%;
     margin: 0 auto;
 }
+
+.logo {
+    text-align: center;
+    width: fit-content;
+    font-weight: bolder;
+    background-color: skyblue;
+    padding: 1rem;
+    border-radius: 2rem 0 2rem 0;
+    color: white;
+}
