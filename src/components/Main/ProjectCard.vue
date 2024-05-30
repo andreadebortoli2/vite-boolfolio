@@ -2,16 +2,17 @@
 export default {
     name: 'ProjectCard',
     props: {
-        project: Object
+        project: Object,
+        base_url: String
     }
 }
 </script>
 
 <template>
     <div class="card">
-        <templplate v-if="project.image.startsWith('project-images')">
-            <img :src="'http://127.0.0.1:8000/storage/' + project.image" alt="">
-        </templplate>
+        <template v-if="project.image.startsWith('project-images')">
+            <img :src="base_url + 'storage/' + project.image" alt="">
+        </template>
         <template v-else>
             <img :src="project.image" alt="">
         </template>

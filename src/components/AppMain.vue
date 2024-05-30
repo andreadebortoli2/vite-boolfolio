@@ -9,7 +9,9 @@ export default {
     },
     data() {
         return {
-            projects: []
+            projects: [],
+            base_url: 'http://127.0.0.1:8000/',
+            projects_api_url: 'api/projects/'
         }
     },
     methods: {
@@ -21,7 +23,7 @@ export default {
         }
     },
     mounted() {
-        let url = 'http://127.0.0.1:8000/api/projects';
+        let url = this.base_url + this.projects_api_url;
         this.callApi(url);
     }
 }
@@ -32,7 +34,7 @@ export default {
         <div class="container">
             <div class="row">
                 <template v-for="project in projects.data">
-                    <ProjectCard :project="project" />
+                    <ProjectCard :project="project" :base_url="base_url" />
                 </template>
             </div>
         </div>
