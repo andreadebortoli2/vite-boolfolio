@@ -35,7 +35,7 @@ export default {
 
     img {
         width: 100%;
-        border-radius: 0.5rem;
+        border-radius: 0.5rem 0.5rem 0 0;
     }
 
     .card-body {

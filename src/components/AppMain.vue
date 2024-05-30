@@ -39,8 +39,7 @@ export default {
 
 <style scoped>
 .container {
-    margin: 2rem auto;
-    width: 90%;
+    margin: 3rem auto;
 
     .row {
         display: flex;
