@@ -1,12 +1,18 @@
 <script>
+import { store } from '../../store';
+
 export default {
     name: 'ProjectCard',
     props: {
         project: Object,
-        base_url: String
+    },
+    data() {
+        return {
+            store,
+        }
     },
     mounted() {
-        console.log(this.project.technologies.length);
+        // console.log(this.project);
     }
 }
 </script>
@@ -14,7 +20,7 @@ export default {
 <template>
     <div class="card">
         <template v-if="project.image.startsWith('project-images')">
-            <img :src="base_url + 'storage/' + project.image" alt="">
+            <img :src="store.base_url + 'storage/' + project.image" alt="">
         </template>
         <template v-else>
             <img :src="project.image" alt="">
@@ -47,11 +53,12 @@ export default {
 .card {
     border: 1px solid gray;
     border-radius: 0.5rem;
+    padding-bottom: 1rem;
     width: 20%;
 
     img {
         width: 100%;
-        height: 70%;
+        height: 60%;
         object-fit: cover;
         border-radius: 0.5rem 0.5rem 0 0;
     }

@@ -1,6 +1,13 @@
 <script>
-export default {
+import { store } from '../store';
 
+export default {
+    name: 'AppHeader',
+    data() {
+        return {
+            store,
+        }
+    }
 }
 </script>
 
@@ -15,14 +22,9 @@ export default {
                 </div>
                 <div class="right-menu">
                     <ul>
-                        <li>
-                            <router-link :to="{ name: 'home' }">Home</router-link>
+                        <li v-for="route in store.routes">
+                            <router-link :to="{ name: route.route_name }">{{ route.view_name }}</router-link>
                         </li>
-                        <li>
-                            <router-link :to="{ name: 'projects' }">Projects</router-link>
-                        </li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contacts</a></li>
                     </ul>
                 </div>
             </nav>

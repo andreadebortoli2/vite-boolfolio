@@ -1,6 +1,13 @@
 <script>
-export default {
+import { store } from '../store';
 
+export default {
+    name: 'AppFooter',
+    data() {
+        return {
+            store,
+        }
+    }
 }
 </script>
 
@@ -20,11 +27,9 @@ export default {
                         Quick links
                     </h4>
                     <ul>
-                        <li>
-                            <router-link :to="{ name: 'projects' }"> Projects</router-link>
+                        <li v-for="route in store.routes">
+                            <router-link :to="{ name: route.route_name }">{{ route.view_name }}</router-link>
                         </li>
-                        <li><a href="#">About</a></li>
-                        <li><a href="#">Contacts</a></li>
                     </ul>
                 </div>
                 <div class="col-2">
