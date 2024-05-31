@@ -44,6 +44,7 @@ export default {
 
 <template>
     <div class="container">
+        <h1>Projects</h1>
         <div class="row">
             <template v-for="project in projects.data">
                 <ProjectCard :project="project" />
@@ -72,7 +73,12 @@ export default {
 
 <style scoped>
 .container {
-    margin: 3rem auto;
+    /* margin: 3rem auto; */
+    padding-bottom: 3rem;
+
+    h1 {
+        padding: 2rem;
+    }
 
     .row {
         display: flex;
@@ -85,6 +91,7 @@ export default {
         display: flex;
         gap: 1rem;
         margin-top: 2rem;
+        margin-left: 2rem;
         list-style: none;
 
         .page-item {
