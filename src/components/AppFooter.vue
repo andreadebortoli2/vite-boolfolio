@@ -29,7 +29,7 @@ export default {
                 </div>
                 <div class="col-2">
                     <h4>
-                        Find on
+                        Find me on
                     </h4>
                     <ul class="social-links">
                         <li>
@@ -96,7 +96,5 @@ footer {
         padding-top: 1rem;
         gap: 1rem;
     }
-
-    .quick-links {}
 }
 </style>
