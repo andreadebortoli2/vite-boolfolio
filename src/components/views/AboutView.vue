@@ -1,18 +1,18 @@
 <script>
-import Banner from '../Main/Banner.vue'
+import Banner from '../Main/Banner.vue';
 
 export default {
-    name: 'HomeView',
+    name: 'AboutView',
     components: {
-        Banner
+        Banner,
     },
     data() {
         return {
             banner: {
-                title: 'Welcome to my portfolio',
+                title: 'About me',
                 content: 'lorem     Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat fugiat rerum aspernatur natus cum pariatur sapiente recusandae. Iusto amet nesciunt, officiis dignissimos quam corrupti ullam, culpa nulla beatae alias dolores.',
-                call_to_action: 'Have a look',
-                route_name: 'projects'
+                call_to_action: 'Contact me',
+                route_name: 'contacts'
             }
         }
     }
