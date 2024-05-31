@@ -20,7 +20,9 @@ export default {
                         Quick links
                     </h4>
                     <ul>
-                        <li><a href="#">Projects</a></li>
+                        <li>
+                            <router-link :to="{ name: 'projects' }"> Projects</router-link>
+                        </li>
                         <li><a href="#">About</a></li>
                         <li><a href="#">Contacts</a></li>
                     </ul>
@@ -54,9 +56,8 @@ export default {
 
 <style scoped>
 footer {
-    background-color: steelblue;
+    background-color: gray;
     padding-top: 1rem;
-    box-shadow: 0 -10px 10px gray;
     color: whitesmoke;
 }
 

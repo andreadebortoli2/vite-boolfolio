@@ -15,6 +15,12 @@ export default {
                 </div>
                 <div class="right-menu">
                     <ul>
+                        <li>
+                            <router-link :to="{ name: 'home' }">Home</router-link>
+                        </li>
+                        <li>
+                            <router-link :to="{ name: 'projects' }">Projects</router-link>
+                        </li>
                         <li><a href="#">Home</a></li>
                         <li><a href="#">Projects</a></li>
                         <li><a href="#">About</a></li>

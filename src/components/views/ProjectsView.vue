@@ -1,9 +1,9 @@
 <script>
-import ProjectCard from './Main/ProjectCard.vue';
+import ProjectCard from '../Main/ProjectCard.vue';
 import axios, { Axios } from 'axios';
 
 export default {
-    name: 'AppMain',
+    name: 'ProjectsView',
     components: {
         ProjectCard
     },
@@ -20,6 +20,9 @@ export default {
                 console.log(response.data.projects);
                 this.projects = response.data.projects;
             })
+                .catch(error => {
+                    console.error(error);
+                })
         },
         nextPage(nextPageUrl) {
             this.callApi(nextPageUrl);
@@ -40,32 +43,31 @@ export default {
 </script>
 
 <template>
-    <main>
-        <div class="container">
-            <div class="row">
-                <template v-for="project in projects.data">
-                    <ProjectCard :project="project" :base_url="base_url" />
-                </template>
-            </div>
-            <nav aria-label="Page navigation">
-                <ul class="pagination">
-                    <li class="page-item prev" @click="prevPage(projects.prev_page_url)"
-                        v-if="projects.prev_page_url !== null">
-                        Prev
-                    </li>
-                    <li class="page-item" :class="{ active: page === projects.current_page }"
-                        v-for="page in projects.last_page" @click="goToPage(page)">
-                        {{ page }}
-                    </li>
-                    <li class="page-item next" @click="nextPage(projects.next_page_url)"
-                        v-if="projects.next_page_url !== null">
-                        Next
-                    </li>
-                </ul>
-            </nav>
-
+    <div class="container">
+        <div class="row">
+            <template v-for="project in projects.data">
+                <ProjectCard :project="project" :base_url="base_url" />
+                <!-- ProjectCard -->
+            </template>
         </div>
-    </main>
+        <nav aria-label="Page navigation">
+            <ul class="pagination">
+                <li class="page-item prev" @click="prevPage(projects.prev_page_url)"
+                    v-if="projects.prev_page_url !== null">
+                    Prev
+                </li>
+                <li class="page-item" :class="{ active: page === projects.current_page }"
+                    v-for="page in projects.last_page" @click="goToPage(page)">
+                    {{ page }}
+                </li>
+                <li class="page-item next" @click="nextPage(projects.next_page_url)"
+                    v-if="projects.next_page_url !== null">
+                    Next
+                </li>
+            </ul>
+        </nav>
+        <!-- Pagination -->
+    </div>
 </template>
 
 <style scoped>
