@@ -4,6 +4,9 @@ export default {
     props: {
         project: Object,
         base_url: String
+    },
+    mounted() {
+        console.log(this.project.technologies.length);
     }
 }
 </script>
@@ -25,9 +28,10 @@ export default {
                 <span v-if="project.type !== null"> {{ project.type.name }}</span>
                 <span v-else> None</span>
                 <br>
-                <strong>Technology:</strong>
+                <strong>Technology: </strong>
                 <template v-if="project.technologies.length !== 0">
-                    <span v-for="technology in project.technologies"> - {{ technology.name }} - </span>
+                    <span v-for="(technology, index) in project.technologies">{{ technology.name }} <span
+                            v-if="index !== project.technologies.length - 1"> - </span></span>
                 </template>
                 <span v-else> None</span>
                 <br>
