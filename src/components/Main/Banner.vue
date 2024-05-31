@@ -5,7 +5,7 @@ export default {
         banner: Object,
     },
     mounted() {
-        console.log(this.banner);
+        // console.log(this.banner);
     }
 }
 </script>
