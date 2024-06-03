@@ -4,6 +4,7 @@ import HomeView from "./components/views/HomeView.vue";
 import ProjectsView from "./components/views/ProjectsView.vue";
 import AboutView from "./components/views/AboutView.vue";
 import ContactsView from "./components/views/ContactsView.vue";
+import SingleProjectView from "./components/views/SingleProjectView.vue";
 
 const router = createRouter({
     history: createWebHistory(),
@@ -27,7 +28,12 @@ const router = createRouter({
             path: '/contacts',
             name: 'contacts',
             component: ContactsView
-        }
+        },
+        {
+            path: '/projects/:id',
+            name: 'single_project',
+            component: SingleProjectView
+        },
     ]
 });
 

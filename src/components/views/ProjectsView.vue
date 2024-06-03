@@ -47,7 +47,12 @@ export default {
         <h1>Projects</h1>
         <div class="row">
             <template v-for="project in projects.data">
-                <ProjectCard :project="project" />
+
+                <router-link :to="{ name: 'single_project', params: { id: project.id } }">
+
+                    <ProjectCard :project="project" />
+                </router-link>
+
                 <!-- ProjectCard -->
             </template>
         </div>
