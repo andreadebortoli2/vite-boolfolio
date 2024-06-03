@@ -11,7 +11,8 @@ export default {
     data() {
         return {
             store,
-            projects: []
+            projects: [],
+            loading: true
         }
     },
     methods: {
@@ -19,6 +20,7 @@ export default {
             axios.get(url).then(response => {
                 // console.log(response.data.projects);
                 this.projects = response.data.projects;
+                this.loading = false;
             })
                 .catch(error => {
                     console.error(error);
@@ -45,40 +47,39 @@ export default {
 <template>
     <div class="container">
         <h1>Projects</h1>
-        <div class="row">
-            <template v-for="project in projects.data">
-
-                <router-link :to="{ name: 'single_project', params: { id: project.id } }">
-
+        <h3 v-if="loading">
+            Loading ...
+        </h3>
+        <template v-else>
+            <div class="row">
+                <template v-for="project in projects.data">
                     <ProjectCard :project="project" />
-                </router-link>
-
-                <!-- ProjectCard -->
-            </template>
-        </div>
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-                <li class="page-item prev" @click="prevPage(projects.prev_page_url)"
-                    v-if="projects.prev_page_url !== null">
-                    Prev
-                </li>
-                <li class="page-item" :class="{ active: page === projects.current_page }"
-                    v-for="page in projects.last_page" @click="goToPage(page)">
-                    {{ page }}
-                </li>
-                <li class="page-item next" @click="nextPage(projects.next_page_url)"
-                    v-if="projects.next_page_url !== null">
-                    Next
-                </li>
-            </ul>
-        </nav>
-        <!-- Pagination -->
+                    <!-- ProjectCard -->
+                </template>
+            </div>
+            <nav aria-label="Page navigation">
+                <ul class="pagination">
+                    <li class="page-item prev" @click="prevPage(projects.prev_page_url)"
+                        v-if="projects.prev_page_url !== null">
+                        Prev
+                    </li>
+                    <li class="page-item" :class="{ active: page === projects.current_page }"
+                        v-for="page in projects.last_page" @click="goToPage(page)">
+                        {{ page }}
+                    </li>
+                    <li class="page-item next" @click="nextPage(projects.next_page_url)"
+                        v-if="projects.next_page_url !== null">
+                        Next
+                    </li>
+                </ul>
+            </nav>
+            <!-- Pagination -->
+        </template>
     </div>
 </template>
 
 <style scoped>
 .container {
-    /* margin: 3rem auto; */
     padding-bottom: 3rem;
 
     h1 {
