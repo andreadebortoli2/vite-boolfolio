@@ -31,17 +31,12 @@ const router = createRouter({
             component: ContactsView
         },
         {
-            path: '/projects/:slug',
+            path: '/project/:slug',
             name: 'single_project',
             component: SingleProjectView
         },
         {
             path: '/:pathMatch(.*)*',
-            name: 'NotFound',
-            component: NotFound
-        },
-        {
-            path: '/project/:pathMatch(.*)*',
             name: 'NotFound',
             component: NotFound
         },
