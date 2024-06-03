@@ -19,7 +19,7 @@ export default {
 
 <template>
     <div class="card">
-        <router-link :to="{ name: 'single_project', params: { id: project.id } }">
+        <router-link :to="{ name: 'single_project', params: { slug: project.slug } }">
             <template v-if="project.image.startsWith('project-images')">
                 <img :src="store.base_url + 'storage/' + project.image" alt="">
             </template>

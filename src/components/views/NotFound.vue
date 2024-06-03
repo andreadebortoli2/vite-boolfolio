@@ -10,11 +10,11 @@ export default {
             404 Not Found
         </h1>
 
-        <div class="back_home">
-            <router-link :to="{ name: 'home' }">
-                <span>Back HOME</span>
-            </router-link>
-        </div>
+        <router-link :to="{ name: 'home' }">
+            <button class="back_home">
+                Back HOME
+            </button>
+        </router-link>
     </div>
 </template>
 
@@ -31,19 +31,13 @@ export default {
         padding: 1rem;
         width: fit-content;
         height: fit-content;
-
-        span {
-            text-decoration: none;
-            color: steelblue;
-        }
+        text-decoration: none;
+        color: steelblue;
 
         &:hover {
             border: none;
             background-color: steelblue;
-
-            span {
-                color: white;
-            }
+            color: white;
         }
     }
 }

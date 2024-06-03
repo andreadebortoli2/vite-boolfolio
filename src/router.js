@@ -31,7 +31,7 @@ const router = createRouter({
             component: ContactsView
         },
         {
-            path: '/projects/:id',
+            path: '/projects/:slug',
             name: 'single_project',
             component: SingleProjectView
         },

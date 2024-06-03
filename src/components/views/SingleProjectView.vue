@@ -31,7 +31,7 @@ export default {
         },
     },
     mounted() {
-        let single_project_url = store.base_url + store.projects_api_url + this.$route.params.id;
+        let single_project_url = store.base_url + store.projects_api_url + this.$route.params.slug;
         this.callSingleApi(single_project_url);
     }
 }
