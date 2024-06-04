@@ -52,6 +52,7 @@ export default {
 footer {
     background-color: var(--primary-dark);
     color: var(--lightest);
+    padding-bottom: 0.3rem;
 
     .row {
         display: flex;
