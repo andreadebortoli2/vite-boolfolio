@@ -16,9 +16,11 @@ export default {
         <div class="container">
             <nav class="menu">
                 <div class="left-menu">
-                    <div class="logo">
-                        <span>Andrea</span> De Bortoli
-                    </div>
+                    <router-link :to="{ name: 'home' }">
+                        <div class="logo">
+                            <span>Andrea</span> De Bortoli
+                        </div>
+                    </router-link>
                 </div>
                 <div class="right-menu">
                     <ul>
@@ -72,7 +74,6 @@ header {
                     color: var(--secondary-light);
                     font-size: 1.5rem;
                     font-weight: bold;
-                    text-decoration: none;
 
                     &.router-link-exact-active {
                         color: var(--primary-dark);

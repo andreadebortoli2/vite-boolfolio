@@ -150,7 +150,6 @@ export default {
 
                         a {
                             color: var(--secondary-light);
-                            text-decoration: none;
 
                             &:hover {
                                 text-decoration: underline;

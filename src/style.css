@@ -47,6 +47,10 @@
     box-sizing: border-box;
 }
 
+a {
+    text-decoration: none;
+}
+
 .logo {
     font-family: "Source Code Pro", monospace;
     font-weight: 300;

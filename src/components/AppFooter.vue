@@ -32,11 +32,6 @@ export default {
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
                                     <i class="fa-brands fa-github" aria-hidden="true"></i>
                                 </a>
                             </li>
@@ -90,7 +85,6 @@ footer {
 
                     a {
                         color: var(--lightest);
-                        text-decoration: none;
                         text-align: center;
                         font-size: 1.3rem;
 
