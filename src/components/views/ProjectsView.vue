@@ -45,17 +45,17 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <section class="container">
         <h1>Projects</h1>
         <h3 v-if="loading">
             Loading ...
         </h3>
         <template v-else>
             <div class="row">
-                <template v-for="project in projects.data">
+                <div class="col" v-for="project in projects.data">
                     <ProjectCard :project="project" />
                     <!-- ProjectCard -->
-                </template>
+                </div>
             </div>
             <nav aria-label="Page navigation">
                 <ul class="pagination">
@@ -75,48 +75,69 @@ export default {
             </nav>
             <!-- Pagination -->
         </template>
-    </div>
+    </section>
 </template>
 
 <style scoped>
 .container {
-    padding-bottom: 3rem;
 
     h1 {
-        padding: 2rem;
+        padding: 0 8rem 2rem;
+        margin-top: -2rem;
+        font-family: "Zilla Slab", serif;
+        font-size: 5rem;
+        color: var(--secondary-dark);
     }
 
     .row {
         display: flex;
         flex-wrap: wrap;
+        gap: 0.5rem;
         justify-content: space-between;
-        gap: 2rem;
+
+        .col {
+            width: calc((100% / 12 * 4) - 0.5rem);
+        }
     }
 
     .pagination {
         display: flex;
+        justify-content: center;
         gap: 1rem;
-        margin-top: 2rem;
-        margin-left: 2rem;
+        margin-top: 4rem;
+        margin-bottom: -6rem;
         list-style: none;
 
         .page-item {
             padding: 0.5rem;
             border-radius: 1rem;
+            color: var(--primary-light);
+            font-size: 2rem;
+            font-family: "Source Code Pro", monospace;
         }
 
         .page-item:hover {
             cursor: pointer;
-            background-color: lightblue;
+            color: var(--secondary-medium);
+            font-size: 1.5rem;
+            padding: 0 0.63rem;
         }
 
         .page-item.prev,
         .page-item.next {
-            border: 1px solid gray;
+            border: 1px solid var(--secondary-dark);
+            font-family: "Pixelify Sans", sans-serif;
+            color: var(--secondary-light);
+
+            &:hover {
+                background-color: var(--secondary-dark);
+                font-size: 2rem;
+                padding: 0.5rem;
+            }
         }
 
         .active {
-            background-color: skyblue;
+            color: var(--secondary-light);
         }
     }
 }
