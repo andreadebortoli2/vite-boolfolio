@@ -164,7 +164,6 @@ export default {
                     margin-left: 1rem;
                     margin-right: 2rem;
                     padding: 2rem;
-                    /* border-radius: 2rem 0 0 2rem; */
                     border-radius: 2rem;
                     color: var(--lightest);
                     font-size: 1.5rem;
@@ -173,9 +172,6 @@ export default {
             }
 
             &.right {
-                /*                 padding: 1rem;
-                background-color: var(--darkest);
-                border-radius: 1rem; */
 
                 img {
                     width: 100%;
