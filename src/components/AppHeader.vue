@@ -48,7 +48,7 @@ header {
 
         display: flex;
         justify-content: space-between;
-        align-items: center;
+        align-items: baseline;
 
         .left-menu {
             .logo {
@@ -67,16 +67,27 @@ header {
             ul {
                 display: flex;
                 justify-content: space-between;
-                gap: 1rem;
+                gap: 0.1rem;
                 list-style-type: none;
+                margin-right: -0.7rem;
 
                 a {
                     color: var(--secondary-light);
                     font-size: 1.5rem;
                     font-weight: bold;
+                    padding: 0.2rem 0.7rem;
+
+                    &:hover {
+                        border-radius: 1rem;
+                        border-bottom: 2px solid var(--secondary-dark);
+                    }
 
                     &.router-link-exact-active {
                         color: var(--primary-dark);
+
+                        &:hover {
+                            border-color: transparent;
+                        }
                     }
                 }
             }

@@ -79,7 +79,7 @@ export default {
                     &:hover {
                         color: var(--primary-dark);
                         background-color: var(--lightest);
-                        border-radius: 0.2rem;
+                        border-radius: 0.3rem;
                     }
                 }
             }
@@ -109,12 +109,19 @@ export default {
 
                 label {
                     margin-left: 2rem;
+                    font-family: "Zilla Slab", serif;
+                    font-size: 1.5rem;
+                    color: var(--secondary-light);
                 }
+
 
                 button {
                     width: 100%;
-                    padding: 1rem 0;
-                    font-size: 1.5rem;
+                    padding: 0.5rem 0;
+                    font-size: 2rem;
+                    color: var(--darkest);
+                    font-family: "Pixelify Sans", sans-serif;
+                    transition: 0.5s;
 
                     &:hover {
                         cursor: pointer;
