@@ -20,31 +20,31 @@ export default {
 <template>
     <div class="card">
         <router-link :to="{ name: 'single_project', params: { slug: project.slug } }">
-            <template v-if="project.image.startsWith('project-images')">
+            <div v-if="project.image.startsWith('project-images')">
                 <img :src="store.base_url + 'storage/' + project.image" alt="">
-            </template>
-            <template v-else>
+            </div>
+            <div v-else>
                 <img :src="project.image" alt="">
-            </template>
+            </div>
             <div class="card-body">
-                <h3>
+                <h2>
                     {{ project.title }}
-                </h3>
+                </h2>
                 <div class="metadata">
-                    <strong>Type:</strong>
-                    <span v-if="project.type !== null"> {{ project.type.name }}</span>
-                    <span v-else> None</span>
-                    <br>
-                    <strong>Technology: </strong>
-                    <template v-if="project.technologies.length !== 0">
-                        <span v-for="(technology, index) in project.technologies">{{ technology.name }} <span
-                                v-if="index !== project.technologies.length - 1"> - </span></span>
-                    </template>
-                    <span v-else> None</span>
-                    <br>
-                    <strong>Author:</strong>
-                    <span v-if="project.author !== null"> {{ project.author }}</span>
-                    <span v-else> None</span>
+                    <div class="type">
+                        <strong>Type: </strong>
+                        <span v-if="project.type !== null"> {{ project.type.name }}</span>
+                        <span v-else> None</span>
+                    </div>
+                    <div class="technologies">
+
+                        <strong>Technology: </strong>
+                        <template v-if="project.technologies.length !== 0">
+                            <span v-for="(technology, index) in project.technologies">{{ technology.name }} <span
+                                    v-if="index !== project.technologies.length - 1"> - </span></span>
+                        </template>
+                        <span v-else> None</span>
+                    </div>
                 </div>
             </div>
         </router-link>
@@ -53,20 +53,50 @@ export default {
 
 <style scoped>
 .card {
-    border: 1px solid gray;
+    height: 100%;
     border-radius: 0.5rem;
-    padding-bottom: 1rem;
-    width: calc(100% / 12 * 3);
+
+    a {
+        text-decoration: none;
+        color: var(--secondary-light);
+    }
 
     img {
+        border: 3px solid var(--secondary-medium);
         width: 100%;
-        height: 60%;
+        aspect-ratio: 4 / 3;
         object-fit: cover;
-        border-radius: 0.5rem 0.5rem 0 0;
+        border-radius: 0.5rem;
+        transition: 0.3s;
     }
 
     .card-body {
-        padding: 1rem;
+        border-radius: 0.5rem;
+        transition: 0.3s;
+        padding: 1rem 0;
+        text-align: center;
+        font-family: "Source Code Pro", monospace;
+
+        .metadata {
+            display: flex;
+            justify-content: space-evenly;
+            padding-top: 1rem;
+            height: max-content;
+
+            strong {
+                font-family: "Zilla Slab", serif;
+            }
+        }
+    }
+
+    &:hover {
+        box-shadow: 0 0 5px 5px var(--primary-light);
+        background-color: var(--primary-dark);
+
+        img {
+            opacity: 0.9;
+            border-color: var(--primary-dark);
+        }
     }
 }
 </style>

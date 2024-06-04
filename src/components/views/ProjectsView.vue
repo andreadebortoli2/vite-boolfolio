@@ -82,7 +82,7 @@ export default {
 .container {
 
     h1 {
-        padding: 0 8rem 2rem;
+        padding: 0 8rem 3rem;
         margin-top: -2rem;
         font-family: "Zilla Slab", serif;
         font-size: 5rem;
@@ -97,6 +97,7 @@ export default {
 
         .col {
             width: calc((100% / 12 * 4) - 0.5rem);
+            margin-bottom: 2rem;
         }
     }
 
@@ -104,8 +105,8 @@ export default {
         display: flex;
         justify-content: center;
         gap: 1rem;
-        margin-top: 4rem;
-        margin-bottom: -6rem;
+        margin-top: 1rem;
+        margin-bottom: -7rem;
         list-style: none;
 
         .page-item {
@@ -114,6 +115,7 @@ export default {
             color: var(--primary-light);
             font-size: 2rem;
             font-family: "Source Code Pro", monospace;
+            transition: 0.4s;
         }
 
         .page-item:hover {
@@ -128,6 +130,7 @@ export default {
             border: 1px solid var(--secondary-dark);
             font-family: "Pixelify Sans", sans-serif;
             color: var(--secondary-light);
+            transition: 0.5s;
 
             &:hover {
                 background-color: var(--secondary-dark);
