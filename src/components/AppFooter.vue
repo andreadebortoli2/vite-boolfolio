@@ -52,7 +52,7 @@ export default {
 footer {
     background-color: var(--primary-dark);
     color: var(--lightest);
-    padding: 0.3rem 0;
+    padding: 0.5rem 0 0.3rem;
     box-shadow: 0 0 20px 1px var(--primary-light);
 
     .row {
@@ -64,9 +64,7 @@ footer {
             display: flex;
             align-items: baseline;
             padding: 0 0.5rem;
-            border-color: var(--secondary-dark);
-            border-width: 4px;
-            border-style: double;
+            border: 4px double var(--secondary-dark);
             border-radius: 0.7rem;
 
             .logo {
