@@ -5,7 +5,7 @@ export default {
 </script>
 
 <template>
-    <div class="container">
+    <section class="container">
         <h1>Contact me</h1>
         <form action="" method="post">
             <div class="wrapper">
@@ -32,13 +32,11 @@ export default {
                 Send
             </button>
         </form>
-    </div>
+    </section>
 </template>
 
 <style scoped>
 .container {
-    padding: 3rem 0;
-    min-height: 70vh;
 
     h1 {
         padding: 2rem;

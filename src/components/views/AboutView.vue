@@ -1,11 +1,6 @@
 <script>
-import Banner from '../Main/Banner.vue';
-
 export default {
     name: 'AboutView',
-    components: {
-        Banner,
-    },
     data() {
         return {
             banner: {
@@ -20,7 +15,9 @@ export default {
 </script>
 
 <template>
-    <Banner :banner="banner" />
+    <section class="container">
+        About
+    </section>
 </template>
 
 <style scoped></style>
