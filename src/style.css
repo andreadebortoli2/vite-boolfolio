@@ -1,7 +1,109 @@
+:root {
+    --primary-dark: #264653;
+    --primary-light: #2a9d8f;
+    --secodary-dark: #e76f51;
+    --secodary-medium: #f4a261;
+    --secodary-light: #e9c46a;
+    --lightest: #e5e5e5;
+    --lightest-transp: rgba(229, 229, 229, 0.4);
+    --medium-light: #6c757d;
+    --medium: #495057;
+    --medium-dark: #343a40;
+    --darkest: #001219;
+    --darkest-transp: rgba(0, 18, 25, 0.5);
+}
+
+/* #region Fonts */
+
+/* pixel */
+.pixelify-sans {
+    font-family: "Pixelify Sans", sans-serif;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>; <weight>: Use a value from 400 to 700 */
+    font-style: normal;
+}
+
+/* code */
+.source-code {
+    font-family: "Source Code Pro", monospace;
+    font-optical-sizing: auto;
+    /* font-weight: <weight>;  <weight>: Use a value from 200 to 900 */
+    font-style: normal;
+}
+
+/* Slab */
+.zilla-slab-light {
+    font-family: "Zilla Slab", serif;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.zilla-slab-regular {
+    font-family: "Zilla Slab", serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.zilla-slab-medium {
+    font-family: "Zilla Slab", serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.zilla-slab-semibold {
+    font-family: "Zilla Slab", serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.zilla-slab-bold {
+    font-family: "Zilla Slab", serif;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.zilla-slab-light-italic {
+    font-family: "Zilla Slab", serif;
+    font-weight: 300;
+    font-style: italic;
+}
+
+.zilla-slab-regular-italic {
+    font-family: "Zilla Slab", serif;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.zilla-slab-medium-italic {
+    font-family: "Zilla Slab", serif;
+    font-weight: 500;
+    font-style: italic;
+}
+
+.zilla-slab-semibold-italic {
+    font-family: "Zilla Slab", serif;
+    font-weight: 600;
+    font-style: italic;
+}
+
+.zilla-slab-bold-italic {
+    font-family: "Zilla Slab", serif;
+    font-weight: 700;
+    font-style: italic;
+}
+
+
+/* #endregion Fonts */
+
+/* #region Common */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+main {
+    background: linear-gradient(to bottom, var(--lightest-transp), var(--lightest-transp)), linear-gradient(to bottom, var(--primary-dark), var(--primary-light));
 }
 
 .container {
@@ -9,12 +111,18 @@
     margin: 0 auto;
 }
 
+section {
+    padding: 10rem 0;
+}
+
 .logo {
-    text-align: center;
-    width: fit-content;
-    font-weight: bolder;
-    background-color: skyblue;
-    padding: 1rem;
-    border-radius: 2rem 0 2rem 0;
-    color: white;
+    font-family: "Source Code Pro", monospace;
+    font-weight: 300;
+    color: var(--secodary-light);
+
+    span {
+        font-family: "Pixelify Sans", sans-serif;
+        font-weight: 700;
+        color: var(--primary-light);
+    }
 }
