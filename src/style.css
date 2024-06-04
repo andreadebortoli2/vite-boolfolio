@@ -70,4 +70,13 @@ main {
 
 section {
     padding: 10rem 0;
+    min-height: 94vh;
+}
+
+.loading {
+    text-align: center;
+    line-height: 50vh;
+    color: var(--secondary-medium);
+    font-size: 10rem;
+    font-family: "Pixelify Sans", sans-serif;
 }

@@ -47,9 +47,9 @@ export default {
 <template>
     <section class="container">
         <h1>Projects</h1>
-        <h3 v-if="loading">
+        <div class="loading" v-if="loading">
             Loading ...
-        </h3>
+        </div>
         <template v-else>
             <div class="row">
                 <div class="col" v-for="project in projects.data">

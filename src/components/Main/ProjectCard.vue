@@ -20,11 +20,16 @@ export default {
 <template>
     <div class="card">
         <router-link :to="{ name: 'single_project', params: { slug: project.slug } }">
-            <div v-if="project.image.startsWith('project-images')">
-                <img :src="store.base_url + 'storage/' + project.image" alt="">
-            </div>
-            <div v-else>
-                <img :src="project.image" alt="">
+            <template v-if="project.image !== null">
+                <div v-if="project.image.startsWith('project-images')">
+                    <img :src="store.base_url + 'storage/' + project.image" alt="">
+                </div>
+                <div v-else>
+                    <img :src="project.image" alt="">
+                </div>
+            </template>
+            <div class="image-placeholder" v-else>
+                Image not found
             </div>
             <div class="card-body">
                 <h2>
@@ -70,6 +75,18 @@ export default {
         transition: 0.3s;
     }
 
+    .image-placeholder {
+        border: 3px solid var(--secondary-medium);
+        aspect-ratio: 4 / 3;
+        text-align: center;
+        font-size: 2rem;
+        font-family: "Pixelify Sans", sans-serif;
+        padding-top: 5rem;
+        background-color: var(--medium-light);
+        opacity: 0.9;
+        border-radius: 0.5rem;
+    }
+
     .card-body {
         border-radius: 0.5rem;
         transition: 0.3s;
@@ -93,7 +110,8 @@ export default {
         box-shadow: 0 0 5px 5px var(--primary-light);
         background-color: var(--primary-dark);
 
-        img {
+        img,
+        .image-placeholder {
             opacity: 0.9;
             border-color: var(--primary-dark);
         }
