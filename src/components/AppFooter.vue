@@ -27,17 +27,17 @@ export default {
                         <ul class="social-links">
                             <li>
                                 <a href="#">
-                                    <i class="fa-brands fa-linkedin fa-fw" aria-hidden="true"></i>
+                                    <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="fa-brands fa-youtube fa-fw" aria-hidden="true"></i>
+                                    <i class="fa-brands fa-youtube" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="fa-brands fa-github fa-fw" aria-hidden="true"></i>
+                                    <i class="fa-brands fa-github" aria-hidden="true"></i>
                                 </a>
                             </li>
                         </ul>
@@ -52,7 +52,8 @@ export default {
 footer {
     background-color: var(--primary-dark);
     color: var(--lightest);
-    padding-bottom: 0.3rem;
+    padding: 0.3rem 0;
+    box-shadow: 0 0 20px 1px var(--primary-light);
 
     .row {
         display: flex;
@@ -62,6 +63,11 @@ footer {
         .col {
             display: flex;
             align-items: baseline;
+            padding: 0 0.5rem;
+            border-color: var(--secondary-dark);
+            border-width: 4px;
+            border-style: double;
+            border-radius: 0.7rem;
 
             .logo {
                 padding-right: 2rem;
@@ -74,7 +80,7 @@ footer {
 
             .find-on {
                 display: flex;
-                align-items: center;
+                align-items: end;
                 justify-content: space-evenly;
 
                 .social-links {
@@ -87,6 +93,21 @@ footer {
                     a {
                         color: var(--lightest);
                         text-decoration: none;
+                        text-align: center;
+                        font-size: 1.3rem;
+
+                        i {
+                            padding: 0.3rem 0.3rem 0.1rem;
+                            border-radius: 0.5rem;
+
+                        }
+
+                        :hover {
+                            transition: 0.5s;
+                            color: var(--medium-dark);
+                            background-color: var(--lightest);
+
+                        }
                     }
                 }
             }

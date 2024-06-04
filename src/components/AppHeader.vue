@@ -69,7 +69,7 @@ header {
                 list-style-type: none;
 
                 a {
-                    color: var(--secodary-light);
+                    color: var(--secondary-light);
                     font-size: 1.5rem;
                     font-weight: bold;
                     text-decoration: none;

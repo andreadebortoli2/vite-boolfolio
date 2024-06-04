@@ -1,9 +1,9 @@
 :root {
     --primary-dark: #264653;
     --primary-light: #2a9d8f;
-    --secodary-dark: #e76f51;
-    --secodary-medium: #f4a261;
-    --secodary-light: #e9c46a;
+    --secondary-dark: #e76f51;
+    --secondary-medium: #f4a261;
+    --secondary-light: #e9c46a;
     --lightest: #e5e5e5;
     --lightest-transp: rgba(229, 229, 229, 0.4);
     --medium-light: #6c757d;
@@ -105,7 +105,7 @@
 .logo {
     font-family: "Source Code Pro", monospace;
     font-weight: 300;
-    color: var(--secodary-light);
+    color: var(--secondary-light);
 
     span {
         font-family: "Pixelify Sans", sans-serif;
@@ -115,7 +115,7 @@
 }
 
 main {
-    background: linear-gradient(to bottom, var(--lightest-transp), var(--lightest-transp)), linear-gradient(to bottom, var(--primary-dark), var(--primary-light));
+    background: linear-gradient(to top, var(--primary-dark), var(--lightest-transp)), linear-gradient(to top, var(--primary-dark), var(--primary-light));
 }
 
 .container {
