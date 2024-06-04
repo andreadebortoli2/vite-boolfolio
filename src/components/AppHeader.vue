@@ -17,13 +17,14 @@ export default {
             <nav class="menu">
                 <div class="left-menu">
                     <div class="logo">
-                        LOGO
+                        <span>Andrea</span> De Bortoli
                     </div>
                 </div>
                 <div class="right-menu">
                     <ul>
                         <li v-for="route in store.routes">
-                            <router-link :to="{ name: route.route_name }">{{ route.view_name }}</router-link>
+                            <router-link activeClass :to="{ name: route.route_name }">{{ route.view_name
+                                }}</router-link>
                         </li>
                     </ul>
                 </div>
@@ -34,34 +35,49 @@ export default {
 
 <style scoped>
 header {
-    background-color: steelblue;
-    box-shadow: 0 10px 10px gray;
-}
+    background-color: var(--primary-dark);
+    background: linear-gradient(to right, var(--primary-dark), var(--primary-light));
+    box-shadow: 0 10px 10px 5px var(--medium);
+    position: fixed;
+    width: 100%;
+    z-index: 100;
 
-.menu {
-    padding: 1rem 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    .menu {
 
-    .left-menu {
-        .logo {
-            font-size: 2.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .left-menu {
+            .logo {
+                margin-left: -2rem;
+                font-size: 2rem;
+
+                span {
+                    font-size: 4rem;
+                }
+            }
         }
-    }
 
-    .right-menu {
-        ul {
-            display: flex;
-            justify-content: space-between;
-            gap: 1rem;
-            list-style-type: none;
+        .right-menu {
 
-            a {
-                color: whitesmoke;
-                font-size: 1.5rem;
-                font-weight: bold;
-                text-decoration: none;
+
+            ul {
+                display: flex;
+                justify-content: space-between;
+                gap: 1rem;
+                list-style-type: none;
+
+                a {
+                    color: var(--secodary-light);
+                    font-size: 1.5rem;
+                    font-weight: bold;
+                    text-decoration: none;
+
+                    &.router-link-exact-active {
+                        color: var(--primary-dark);
+                    }
+                }
             }
         }
     }

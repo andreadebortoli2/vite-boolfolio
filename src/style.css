@@ -102,6 +102,18 @@
     box-sizing: border-box;
 }
 
+.logo {
+    font-family: "Source Code Pro", monospace;
+    font-weight: 300;
+    color: var(--secodary-light);
+
+    span {
+        font-family: "Pixelify Sans", sans-serif;
+        font-weight: 700;
+        color: var(--primary-light);
+    }
+}
+
 main {
     background: linear-gradient(to bottom, var(--lightest-transp), var(--lightest-transp)), linear-gradient(to bottom, var(--primary-dark), var(--primary-light));
 }
@@ -113,16 +125,4 @@ main {
 
 section {
     padding: 10rem 0;
-}
-
-.logo {
-    font-family: "Source Code Pro", monospace;
-    font-weight: 300;
-    color: var(--secodary-light);
-
-    span {
-        font-family: "Pixelify Sans", sans-serif;
-        font-weight: 700;
-        color: var(--primary-light);
-    }
 }
