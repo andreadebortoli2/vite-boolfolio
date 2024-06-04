@@ -92,12 +92,16 @@ export default {
         padding: 1rem 0;
         text-align: center;
         font-family: "Source Code Pro", monospace;
+        height: 100%;
+
+        h2 {
+            padding: 1rem;
+        }
 
         .metadata {
             display: flex;
             justify-content: space-evenly;
-            padding-top: 1rem;
-            height: max-content;
+            align-items: flex-end;
 
             strong {
                 font-family: "Zilla Slab", serif;

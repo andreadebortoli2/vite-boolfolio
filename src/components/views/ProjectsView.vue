@@ -93,7 +93,6 @@ export default {
         display: flex;
         flex-wrap: wrap;
         gap: 0.5rem;
-        justify-content: space-between;
 
         .col {
             width: calc((100% / 12 * 4) - 0.5rem);
