@@ -1,6 +1,51 @@
 <script>
+import axios from 'axios';
+import { store } from '../../store';
+
 export default {
+
     name: 'ContactsView',
+    data() {
+        return {
+            store,
+            name: '',
+            email: '',
+            message: '',
+            loading: false,
+            errors: [],
+        }
+    },
+    methods: {
+        sendMessage() {
+            const data = {
+                name: this.name,
+                email: this.email,
+                message: this.message
+            }
+            // console.log(data);
+
+            this.loading = true
+
+            axios.post(store.base_url + store.form_api_url, data).then(response => {
+                // console.log(response);
+                if (response.data.success) {
+                    // console.log(response);
+                    this.name = '';
+                    this.email = '';
+                    this.message = '';
+                } else {
+                    // console.log(response.data.errors);
+                    this.errors = response.data.errors;
+                }
+                this.loading = false;
+            }).catch(error => {
+                console.error(error);
+            })
+
+        }
+    },
+    mounted() {
+    }
 }
 </script>
 
@@ -18,26 +63,27 @@ export default {
             </div>
             <div class="col form">
 
-                <form action="" method="post">
+                <form @submit.prevent="sendMessage()">
 
                     <div class="name">
                         <label for="name" class="form-label">Name</label>
                         <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId"
-                            placeholder="John Doe" />
+                            placeholder="John Doe" v-model="name" />
                     </div>
                     <div class="email">
                         <label for="email" class="form-label">Email</label>
                         <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelpId"
-                            placeholder="abc@mail.com" />
+                            placeholder="abc@mail.com" v-model="email" />
                     </div>
 
                     <div class="message">
                         <label for="message" class="form-label">Message</label>
-                        <textarea class="form-control" name="message" id="message" rows="8">Type your message</textarea>
+                        <textarea class="form-control" name="message" id="message" rows="8"
+                            v-model="message">Type your message</textarea>
                     </div>
 
-                    <button type="submit">
-                        Send
+                    <button type="submit" :disabled="loading">
+                        {{ loading ? 'Sending...' : 'Send' }}
                     </button>
                 </form>
             </div>
@@ -105,6 +151,7 @@ export default {
                     margin: 1rem 0 2rem;
                     padding: 0.5rem;
                     background-color: var(--lightest);
+                    border: 2px solid transparent;
                 }
 
                 label {

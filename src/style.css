@@ -5,12 +5,12 @@
     --secondary-medium: #f4a261;
     --secondary-light: #e9c46a;
     --lightest: #e5e5e5;
-    --lightest-transp: rgba(229, 229, 229, 0.4);
+    --lightest-transp: #e5e5e566;
     --medium-light: #6c757d;
     --medium: #495057;
     --medium-dark: #343a40;
     --darkest: #001219;
-    --darkest-transp: rgba(0, 18, 25, 0.5);
+    --darkest-transp: #00121980;
 }
 
 /* #region Fonts */

@@ -22,4 +22,5 @@ export const store = reactive({
     ],
     base_url: 'http://127.0.0.1:8000/',
     projects_api_url: 'api/projects/',
+    form_api_url: 'api/contacts',
 })
