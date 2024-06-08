@@ -99,12 +99,14 @@ export default {
         }
 
         .metadata {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: flex-end;
+            text-align: center;
 
-            strong {
-                font-family: "Zilla Slab", serif;
+            div {
+                padding: 0.5rem 0;
+
+                strong {
+                    font-family: "Zilla Slab", serif;
+                }
             }
         }
     }
