@@ -70,9 +70,10 @@ export default {
                             <br>
                             <strong>Source code:</strong>
                             <span v-if="project.source_code_url !== null">
-                                <a :href="project.source_code_url">
+                                <!-- <a :href="project.source_code_url">
                                     {{ project.source_code_url }}
-                                </a>
+                                </a> -->
+                                <span>{{ project.source_code_url }} (monentarily disabled)</span>
                             </span>
                             <span v-else> None</span>
                         </div>
