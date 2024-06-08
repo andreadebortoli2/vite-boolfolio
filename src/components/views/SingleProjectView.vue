@@ -73,7 +73,7 @@ export default {
                                 <!-- <a :href="project.source_code_url">
                                     {{ project.source_code_url }}
                                 </a> -->
-                                <span>{{ project.source_code_url }} (monentarily disabled)</span>
+                                <span>{{ project.source_code_url }} (temporarily disabled)</span>
                             </span>
                             <span v-else> None</span>
                         </div>
