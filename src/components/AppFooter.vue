@@ -26,12 +26,12 @@ export default {
                         </h4>
                         <ul class="social-links">
                             <li>
-                                <a href="#">
+                                <a :href="store.linkedIn_profile_url">
                                     <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a :href="store.github_profile_url">
                                     <i class="fa-brands fa-github" aria-hidden="true"></i>
                                 </a>
                             </li>

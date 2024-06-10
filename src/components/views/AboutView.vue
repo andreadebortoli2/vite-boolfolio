@@ -1,6 +1,13 @@
 <script>
+import { store } from '../../store';
+
 export default {
     name: 'AboutView',
+    data() {
+        return {
+            store,
+        }
+    }
 }
 </script>
 
@@ -32,7 +39,12 @@ export default {
                         quia,
                         architecto labore dignissimos fugiat.
                     </p>
-                    <router-link :to="{ name: 'contacts' }">contacts</router-link>
+                    <a class="top_link" :href="store.github_profile_url">
+                        check my projects on
+                        <i class="fa-brands fa-github" aria-hidden="true"></i>
+                    </a>
+                    <div class="divider">or</div>
+                    <router-link class="bottom_link" :to="{ name: 'contacts' }">contact me directly</router-link>
                 </div>
             </div>
         </div>
@@ -91,9 +103,7 @@ h1 {
             }
 
             a {
-                margin: 2rem -2rem 0;
                 padding: 2rem;
-                border-radius: 0 0 1.8rem 1.8rem;
                 display: block;
                 text-align: center;
                 font-family: "Pixelify Sans", sans-serif;
@@ -108,6 +118,26 @@ h1 {
                     border-top: 3px solid var(--primary-dark);
                     color: var(--primary-dark);
                 }
+            }
+
+            .top_link {
+                margin: 2rem -2rem 0;
+                border-radius: 1.8rem 1.8rem 0 0;
+
+            }
+
+            .divider {
+                padding: 1rem 0;
+                font-size: 2rem;
+                font-family: "Source Code Pro", monospace;
+                font-weight: 900;
+                text-align: center;
+            }
+
+            .bottom_link {
+                margin: 0 -2rem;
+                border-radius: 0 0 1.8rem 1.8rem;
+
             }
         }
     }

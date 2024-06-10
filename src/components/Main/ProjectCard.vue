@@ -92,7 +92,6 @@ export default {
         padding: 1rem 0;
         text-align: center;
         font-family: "Source Code Pro", monospace;
-        height: 100%;
 
         h2 {
             padding: 1rem;

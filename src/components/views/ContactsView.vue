@@ -12,7 +12,7 @@ export default {
             email: '',
             message: '',
             loading: false,
-            errors: [],
+            errors: {},
         }
     },
     methods: {
@@ -34,15 +34,14 @@ export default {
                     this.email = '';
                     this.message = '';
                 } else {
-                    // console.log(response.data.errors);
+                    console.log(response.data.errors);
                     this.errors = response.data.errors;
                 }
                 this.loading = false;
             }).catch(error => {
                 console.error(error);
             })
-
-        }
+        },
     },
     mounted() {
     }
@@ -51,11 +50,16 @@ export default {
 
 <template>
     <section class="container">
-        <h1>Contact me</h1>
+        <div class="wrapper">
+            <h1>Contact me</h1>
+            <div class="errors" v-if="Object.keys(this.errors).length !== 0">
+                <div v-for="error in errors">{{ error[0] }}</div>
+            </div>
+        </div>
         <div class="row">
             <div class="col contact">
                 <p>directly on
-                    <a href="#">
+                    <a :href="store.linkedIn_profile_url">
                         <i class="fa-brands fa-linkedin" aria-hidden="true"></i>
                     </a>
                 </p>
@@ -100,6 +104,27 @@ export default {
         font-family: "Zilla Slab", serif;
         font-size: 5rem;
         color: var(--secondary-dark);
+    }
+
+    .wrapper {
+        display: flex;
+        justify-content: space-between;
+
+        .errors {
+            width: calc(100% / 12 * 7);
+            margin: -3.4rem 0 2rem;
+            padding: 1rem;
+            background-color: var(--secondary-light);
+            background: linear-gradient(to top, var(--lightest-transp), var(--lightest-transp)), linear-gradient(to top, var(--secondary-medium), var(--secondary-medium));
+            color: var(--danger);
+            text-align: center;
+            font-family: "Zilla Slab", serif;
+            font-size: 1.5rem;
+            font-weight: 500;
+            font-style: italic;
+            line-height: 2rem;
+            border: 3px solid var(--danger);
+        }
     }
 
     .row {
